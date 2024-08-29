@@ -7,27 +7,27 @@ import Hero from  "./Components/Hero/Hero";
 const App = () => {
 
   let heroData = [
-    {text1:"Honda Cirebon",text2:"What"},
-    {text1:"Dealer Terbaik Di Kota Cirebon",text2:"Dealer"},
+    {text1:"Honda Cirebon",text2:"Dealer Terbaik Di Cirebon"},
+    {text1:"Harga Terjangkau",text2:"Banyak Promo"},
     {text1:"Ada Yang bisa kami bantu",text2:"Pilih Warna Banyak"},
 
   ]
 
-  const[heroCount, setHeroCount] = useState(2);
-  const[playStatus,setPlayStatus] = useState(true);
+  const[heroCount, setHeroCount] = useState(0);
+  const[playStatus,setPlayStatus] = useState(false);
 
 
   return (
     <div>
       <Background playStatus={playStatus} heroCount={heroCount}/>
       <Navbar></Navbar>
-       <Hero>
+       <Hero
         setPlayStatus = {setPlayStatus}
         heroData = {heroData[heroCount]}
         setHeroCount = {setHeroCount}
         playStatus = {playStatus}
 
-       </Hero>
+       />
     </div>
   )
 }
